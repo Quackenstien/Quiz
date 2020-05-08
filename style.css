@@ -1,0 +1,10 @@
+.high {
+  position: top;
+  margin-left: 8px;
+}
+
+#countdown {
+  position: top;
+  text-align: right;
+  margin-right: 8px;
+}
