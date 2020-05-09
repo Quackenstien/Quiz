@@ -1,20 +1,19 @@
 var timerEl = document.getElementById("countdown");
-var high = document.getElementById("high");
+var highBtnEl = document.getElementById("highscores");
+var startQuiz = document.getElementById("startquiz");
 
 function startCountdown() {
-  var timeLeft = 5;
+  var timeLeft = 70;
 
   var timeInterval = setInterval(function () {
-    timerEl.textContent = timeLeft;
     timeLeft--;
+    timerEl.textContent = timeLeft;
 
     if (timeLeft === 0) {
-      timerEl.textContent = "";
-      speedRead();
       clearInterval(timeInterval);
     }
   }, 1000);
   return;
 }
 
-high.addEventListener("click", startCountdown);
+startQuiz.addEventListener("click", startCountdown);
