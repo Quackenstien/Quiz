@@ -10,6 +10,10 @@ var tag = document.createElement("li");
 var secondTag = document.createElement("li");
 var thirdTag = document.createElement("li");
 var fourthTag = document.createElement("li");
+var tagBtn = document.createElement("button");
+var tagBtn2 = document.createElement("button");
+var tagBtn3 = document.createElement("button");
+var tagBtn4 = document.createElement("button");
 
 var timeLeft = 5;
 
@@ -34,11 +38,17 @@ function startCountdown() {
     document.body.children[3].appendChild(secondTag);
     document.body.children[3].appendChild(thirdTag);
     document.body.children[3].appendChild(fourthTag);
+    document.body.children[3].children[0].appendChild(tagBtn);
+    document.body.children[3].children[1].appendChild(tagBtn2);
+    document.body.children[3].children[2].appendChild(tagBtn3);
+    document.body.children[3].children[3].appendChild(tagBtn4);
 
-    tag.textContent = answerObj.ans1;
-    secondTag.textContent = answerObj.ans2;
-    thirdTag.textContent = answerObj.ans3;
-    fourthTag.textContent = answerObj.ans4;
+    console.log(event);
+
+    tagBtn.textContent = answerObj.ans1;
+    tagBtn2.textContent = answerObj.ans2;
+    tagBtn3.textContent = answerObj.ans3;
+    tagBtn4.textContent = answerObj.ans4;
 
     if (timeLeft === 0) {
       clearInterval(timeInterval);
