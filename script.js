@@ -12,7 +12,7 @@ var tagBtn3 = document.createElement("button");
 var tagBtn4 = document.createElement("button");
 var listEl = document.querySelector("#listEl");
 
-var timeLeft = 25;
+var timeLeft = 70;
 
 var answerObj = {
   ans1: "who let the dogs out",
@@ -25,72 +25,69 @@ var answerObj = {
   ans8: "chewy",
 };
 
-function startCountdown() {
-  var timeInterval = setInterval(function () {
+function questOne() {
+  var timer = setInterval(function () {
     timeLeft--;
     timerEl.textContent = timeLeft;
-    questOne();
 
-    function questOne() {
-      question.textContent = "Not me...";
-
-      document.body.children[3].appendChild(tag);
-      document.body.children[3].appendChild(secondTag);
-      document.body.children[3].appendChild(thirdTag);
-      document.body.children[3].appendChild(fourthTag);
-      document.body.children[3].children[0].appendChild(tagBtn);
-      document.body.children[3].children[1].appendChild(tagBtn2);
-      document.body.children[3].children[2].appendChild(tagBtn3);
-      document.body.children[3].children[3].appendChild(tagBtn4);
-
-      tagBtn.textContent = answerObj.ans1;
-      tagBtn2.textContent = answerObj.ans2;
-      tagBtn3.textContent = answerObj.ans3;
-      tagBtn4.textContent = answerObj.ans4;
-
-      listEl.addEventListener("click", function (event) {
-        event.preventDefault();
-        if ((event.target = tagBtn.value)) {
-          questTwo();
-        } else {
-          timeLeft-- * 10;
-          questTwo();
-        }
-      });
-    }
     if (timeLeft === 0) {
-      clearInterval(timeInterval);
+      clearInterval(timer);
     }
   }, 1000);
-  return;
+  question.textContent = "Not me...";
 
-  function questTwo() {
-    question.textContent = "Yes me...";
+  document.body.children[3].appendChild(tag);
+  document.body.children[3].appendChild(secondTag);
+  document.body.children[3].appendChild(thirdTag);
+  document.body.children[3].appendChild(fourthTag);
+  document.body.children[3].children[0].appendChild(tagBtn);
+  document.body.children[3].children[1].appendChild(tagBtn2);
+  document.body.children[3].children[2].appendChild(tagBtn3);
+  document.body.children[3].children[3].appendChild(tagBtn4);
 
-    document.body.children[3].appendChild(tag);
-    document.body.children[3].appendChild(secondTag);
-    document.body.children[3].appendChild(thirdTag);
-    document.body.children[3].appendChild(fourthTag);
-    document.body.children[3].children[0].appendChild(tagBtn);
-    document.body.children[3].children[1].appendChild(tagBtn2);
-    document.body.children[3].children[2].appendChild(tagBtn3);
-    document.body.children[3].children[3].appendChild(tagBtn4);
+  tagBtn.textContent = answerObj.ans1;
+  tagBtn2.textContent = answerObj.ans2;
+  tagBtn3.textContent = answerObj.ans3;
+  tagBtn4.textContent = answerObj.ans4;
 
-    tagBtn.textContent = answerObj.ans5;
-    tagBtn2.textContent = answerObj.ans6;
-    tagBtn3.textContent = answerObj.ans7;
-    tagBtn4.textContent = answerObj.ans8;
-
-    listEl.addEventListener("click", function (event) {
-      event.preventDefault();
-      if ((event.target = tagBtn4)) {
-        console.log("hi");
-        // questThree();
-      } else {
-        timeLeft-- * 10;
-        // questThree();
-      }
-    });
-  }
+  listEl.addEventListener("click", function (event) {
+    event.preventDefault();
+    if ((event.target = tagBtn.value)) {
+      questTwo();
+    } else {
+      timeLeft-- * 10;
+      questTwo();
+    }
+  });
 }
-startQuiz.addEventListener("click", startCountdown);
+
+function questTwo() {
+  question.textContent = "Yes me...";
+
+  document.body.children[3].appendChild(tag);
+  document.body.children[3].appendChild(secondTag);
+  document.body.children[3].appendChild(thirdTag);
+  document.body.children[3].appendChild(fourthTag);
+  document.body.children[3].children[0].appendChild(tagBtn);
+  document.body.children[3].children[1].appendChild(tagBtn2);
+  document.body.children[3].children[2].appendChild(tagBtn3);
+  document.body.children[3].children[3].appendChild(tagBtn4);
+
+  tagBtn.textContent = answerObj.ans5;
+  tagBtn2.textContent = answerObj.ans6;
+  tagBtn3.textContent = answerObj.ans7;
+  tagBtn4.textContent = answerObj.ans8;
+
+  listEl.addEventListener("click", function (event) {
+    event.preventDefault();
+    if ((event.target = tagBtn4)) {
+      console.log("hi");
+      // questThree();
+    } else {
+      timeLeft-- * 10;
+      // questThree();
+    }
+  });
+}
+
+startQuiz.addEventListener("click", questOne);
