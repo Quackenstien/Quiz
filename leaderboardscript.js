@@ -11,9 +11,6 @@ function init() {
 
   ulEl.append(user);
   ulEl.append(score);
-
-  console.log(score);
-  console.log(user);
 }
 
 init();
