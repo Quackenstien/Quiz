@@ -142,6 +142,8 @@ function endGame() {
   // Stores values of user and score to localStorage
   localStorage.setItem("score", secondsLeft);
   localStorage.setItem("user", user);
+
+  window.location.href = "leaderboard.html";
 }
 
 // Start button listeners
