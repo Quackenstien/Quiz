@@ -119,6 +119,31 @@ function game() {
   buttonEl4.addEventListener("click", displayGrade);
 }
 
+//Created a function to call back to check for correct answer and move forwards in the array
+function navigate() {
+  // Advance to next question by increasing the questionIndex value
+  questionIndex++;
+  // Verify condition of next question and
+  if (questionIndex !== questionArray.length) {
+    game();
+  } else {
+    endGame();
+  }
+}
+
+// Function to run when the game has ended either by time or by the user going through the answers
+function endGame() {
+  // Resets the timer interval
+  clearInterval(timer);
+  // Prompt for user initials
+  user = prompt("Please enter your initials here:");
+  // Sets the seconds left as the final score
+  score = secondsLeft;
+  // Stores values of user and score to localStorage
+  localStorage.setItem("score", secondsLeft);
+  localStorage.setItem("user", user);
+}
+
 // Start button listeners
 startBtn.addEventListener("click", function () {
   game();
