@@ -60,3 +60,18 @@ function startTimer() {
     }
   }, 1000);
 }
+
+// Checking to see whether the user response is true
+function displayGrade(event) {
+  console.log(questionIndex);
+  var correctAnswer = questionArray[questionIndex].correct;
+  console.log(correctAnswer);
+  if (event.target.textContent === correctAnswer) {
+    console.log("correct");
+    navigate();
+  } else {
+    // Adjust timer by -10 seconds
+    secondsLeft -= 10;
+    navigate();
+  }
+}
