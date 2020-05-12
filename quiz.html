@@ -3,27 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+
+    <title>Code Quiz</title>
   </head>
+
   <body>
-    <div class="row">
-      <div class="col">
-        <button id="highscores">High Scores</button>
+    <!-- Menu Bar -->
+    <nav>
+      <div class="d-flex bd-highlight mb-3 justify-content-between">
+        <!-- Highest Score Link -->
+        <div class="p-2 bd-highlight">
+          <a href="leaderboard.html" class="href">View Highscores</a>
+        </div>
+        <!-- Timer -->
+        <div class="p-2 bd-highlight" id="timer">Timer: 60 seconds</div>
       </div>
-      <div class="col">
-        <h6 id="countdown">Timer:</h6>
-      </div>
-    </div>
-    <button id="startquiz">Start Quiz</button>
-    <h1 id="q1"></h1>
-    <ol id="listEl"></ol>
+    </nav>
 
     <script src="./script.js"></script>
   </body>
