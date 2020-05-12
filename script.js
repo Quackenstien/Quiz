@@ -49,3 +49,14 @@ var questionArray = [
     correct: "b. Lexus Lc500",
   },
 ];
+
+// Timer function set to 1 second interval
+function startTimer() {
+  timer = setInterval(function () {
+    secondsLeft--;
+    timerEL.textContent = "Seconds Left: " + secondsLeft;
+    if (secondsLeft === 0) {
+      endGame();
+    }
+  }, 1000);
+}
