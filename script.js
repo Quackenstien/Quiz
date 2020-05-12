@@ -75,3 +75,52 @@ function displayGrade(event) {
     navigate();
   }
 }
+
+// Game Play function
+function game() {
+  console.log(questionIndex, "current index");
+  // Hide the start button
+  document.querySelector("#start").style.display = "none";
+
+  // Add style to variables
+  buttonEl1.classList.remove("d-none");
+  buttonEl2.classList.remove("d-none");
+  buttonEl3.classList.remove("d-none");
+  buttonEl4.classList.remove("d-none");
+  buttonEl1.classList.add("d-block");
+  buttonEl2.classList.add("d-block");
+  buttonEl3.classList.add("d-block");
+  buttonEl4.classList.add("d-block");
+
+  // Clear variable content
+  cardTitleEl.innerHTML = "";
+  cardTextEl.innerHTML = "";
+
+  console.log(questionIndex);
+  // Add content to variables
+  var temp = questionIndex;
+  cardTitleEl.innerHTML = "Question #" + (temp + 1);
+  cardTextEl.textContent = questionArray[questionIndex].question;
+  buttonEl1.textContent = questionArray[questionIndex].answers[0];
+  buttonEl2.textContent = questionArray[questionIndex].answers[1];
+  buttonEl3.textContent = questionArray[questionIndex].answers[2];
+  buttonEl4.textContent = questionArray[questionIndex].answers[3];
+
+  // Append variable content to DOM elements
+  buttonArrayEl.appendChild(buttonEl1);
+  buttonArrayEl.appendChild(buttonEl2);
+  buttonArrayEl.appendChild(buttonEl3);
+  buttonArrayEl.appendChild(buttonEl4);
+
+  // Listen for answer button click
+  buttonEl1.addEventListener("click", displayGrade);
+  buttonEl2.addEventListener("click", displayGrade);
+  buttonEl3.addEventListener("click", displayGrade);
+  buttonEl4.addEventListener("click", displayGrade);
+}
+
+// Start button listeners
+startBtn.addEventListener("click", function () {
+  game();
+  startTimer();
+});
