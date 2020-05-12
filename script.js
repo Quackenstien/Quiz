@@ -15,3 +15,37 @@ var questionIndex = 0;
 var timer;
 var score;
 var user;
+
+// Array variable to contain the question objects
+var questionArray = [
+  {
+    question: "How many vehicle do I own?",
+    answers: ["a. Four", "b. One", "c. Ten", "d. Three"],
+    correct: "d. Three",
+  },
+  {
+    question: "What was the make of my first car?",
+    answers: ["a. Toyota", "b. Honda", "c. Lexus", "d. Ford"],
+    correct: "b. Honda",
+  },
+  {
+    question: "How old was I when I bought my first car?",
+    answers: ["a. 15", "b. 16", "c. 17", "d. 18"],
+    correct: "a. 15",
+  },
+  {
+    question: "What make(s) of vehicle do I currently own?",
+    answers: ["a. Toyota", "b. Lexus", "c. Both a and b", "d. Ford"],
+    correct: "c. Both a and b",
+  },
+  {
+    question: "What is the next vehicle I am going to purchase?",
+    answers: [
+      "a. Toyota 4Runner",
+      "b. Lexus Lc500",
+      "c. Nissan GT-R",
+      "d. Unsure",
+    ],
+    correct: "b. Lexus Lc500",
+  },
+];
